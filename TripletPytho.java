@@ -1,59 +1,49 @@
-import java.util.*;
-public class Main
+package practice2;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class PythagoreanTriplet
 {
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		System.out.println("Enter the no of testcases:");
-		int testcase = input.nextInt();
-	
-	
-		System.out.println("Enter the elements in the array:");
-		int flag=0;
-		for(int l=0;l<testcase;l++)
-		{
-		    
-		int size = input.nextInt();
-			int arr[] = new int[size];
-		for(int i=0;i<size;i++)
-		{
-		    arr[i]=input.nextInt();
-		}
-		for(int i=0;i<size;i++)
-		{
-		    for(int j=i+1;j<size;j++)
-		    {
-		        for(int k=j+1;k<size;k++)
-		        {
-		            if((arr[i]*arr[i]) + (arr[j]*arr[j]) == (arr[k]*arr[k]))
-		            {
-		               flag=1;
-		               break;
-		            }
-		            else 
-		            {	
-		                flag=0;
-		            }
-		            
-		        }
-		        if(flag==1)
-		        {
-		            break;
-		        }
-		    }
-		    if(flag==1)
-		    {
-		        break;
-		    }
-		}
-		if(flag==1)
-		{
-		System.out.println("Yes");
-		}
-		else 
-		{
-		    System.out.println("No");
-		}
-		
-		}
-	}
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+
+
+        for(int i=0;i<t;i++)
+        {
+            int n=sc.nextInt();
+        int arr[]=new int[n];
+        int flag=0;
+            for(int a=0;i<n;i++)
+        {
+            arr[a]=sc.nextInt();
+        }
+        Arrays.sort(arr);
+           for(int j=0;j<n;j++)
+           {
+               for(int k=j+1;k<n;k++)
+               {
+                   for(int l=k+1;l<n;l++)
+                   {
+                       if((arr[j]*arr[j])+(arr[k]*arr[k])==arr[l]*arr[l])
+                       {
+                           flag=1;
+                       }
+                   }
+               }
+           }
+
+             if(flag==1)
+        {
+            System.out.println("Yes");
+        }
+        else if(flag==0)
+        {
+            System.out.println("No");
+        }
+        }
+
+    }
 }
