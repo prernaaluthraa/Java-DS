@@ -1,53 +1,45 @@
-import java.util.*;
-public class Main
+package practice2;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class StringAnagram
 {
-	public static void main(String[] args) {
-	Scanner input = new Scanner(System.in);
-	System.out.println("Enter your first string:");
-	String s = input.next();
-	System.out.println("Enter your second string:");
-	String s1 = input.next();
-	int flag=0;
-	char char1[] = s.toCharArray();
-	Arrays.sort(char1);
-	// You can display the char1 array by uncommenting this thing...
-// 	for(int i=0;i<char1.length;i++)
-// 	{
-// 	    System.out.print(char1[i]+" ");
-// 	}
-	char char2[] =  s1.toCharArray();
-	System.out.println();
-    Arrays.sort(char2);
-    // You can display the char2 array by uncommenting this thing...
-//     for(int i=0;i<char2.length;i++)
-// 	{
-// 	    System.out.print(char2[i]+" ");
-// 	}
-	if(s.length() == s1.length()){
-	for(int i=0;i<s.length();i++)
-	{
-	    if(char1[i]==char2[i])
-	    {
-	        flag=1;
-	    }
-	    else 
-	    {
-	        flag=0;
-	        break;
-	    }
-	}
-	}
-	else 
-	{ 
-	 System.out.println("Not Anagrams because length is not equal");  
-	}
-	if(flag==1 )
-	{
-	    System.out.println("Anagrams");
-	}
-	else if(flag==0 && s.length() == s1.length())
-	{
-	    System.out.println("Not Anagrams");
-	}
-	}
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter two Strings: ");
+        String s1=sc.next();
+        String s2=sc.next();
+        char ch1[]=s1.toCharArray();
+        char ch2[]=s2.toCharArray();
+        Arrays.sort(ch1);
+        Arrays.sort(ch2);
+        int a=0;
+        if(ch1.length==ch2.length)
+        {
+        for(int i=0;i<ch1.length;i++)
+        {
+
+                if(ch1[i]!=ch2[i])
+                {
+                   a=1;
+                }
+
+
+        }
+        if(a==1)
+        {
+            System.out.println("Not Anagrams");
+        }
+        else
+        {
+            System.out.println("Anagrams");
+        }
+        }
+        else
+        {
+            System.out.println("Not Anagrams");
+        }
+    }
 }
